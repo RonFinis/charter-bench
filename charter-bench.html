@@ -794,11 +794,11 @@ const SCEN = [
 
 const PLAN = [
  ["2026-11-17","Tue","Charter map ss. 1–15 + 'Sections' flashcards. Learn the hooks."],
- ["2026-11-18","Wed","Bill of Rights vs Charter, ss. 1 and 33, the Oakes test. True/False drill on Charter topics."],
- ["2026-11-19","Thu","The 5 Charter cases: Oakes, Carter, Bissonnette, A.C., TWU. Play Be the Judge + Case Match."],
- ["2026-11-20","Fri","Indigenous rights: s. 35, s. 25, Sparrow, Powley, Marshall, Ipperwash, the organizer."],
- ["2026-11-21","Sat","Human rights terms, Ontario Code, UDHR, carding, systemic racism + the 3 films. Plan your long answer."],
- ["2026-11-22","Sun","Two test simulations (10 MC + 5 T/F). Re-do every flashcard still in box 1–2."],
+ ["2026-11-18","Wed","Catch up on the Charter map, then Bill of Rights vs Charter, ss. 1 and 33, the Oakes test. T/F drill on Charter sections + Limits & remedies."],
+ ["2026-11-19","Thu","The 5 Charter cases: Oakes, Carter, Bissonnette, A.C., TWU. Play Be the Judge + Case Match. Then human rights terms, the Ontario Code and the UDHR."],
+ ["2026-11-20","Fri","Before Shabbat: Indigenous rights (s. 35, s. 25, Sparrow, Powley, Marshall, Ipperwash, the organizer) + Trapped on the Water and Cottagers & Indians."],
+ ["2026-11-21","Sat","Shabbat. No studying, the plan already fits around it.",true],
+ ["2026-11-22","Sun","Carding, systemic racism + The Skin We're In. Plan your long answer. Two test simulations, then re-do every flashcard still in box 1–2."],
  ["2026-11-23","Mon","15-minute warm-up: Lightning round. Good luck!"]
 ];
 
@@ -810,7 +810,7 @@ let ST={xp:0,streak:0,last:"",plan:{},cats:{},boxes:{},judge:{},best:{},rs:{}};
 try{const raw=localStorage.getItem(KEY);if(raw)ST=Object.assign(ST,JSON.parse(raw))}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(ST))}catch(e){}}
 function todayStr(d=new Date()){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
-function touch(){const t=todayStr();if(ST.last===t)return;const y=new Date();y.setDate(y.getDate()-1);ST.streak=(ST.last===todayStr(y))?ST.streak+1:1;ST.last=t;save();hud()}
+function touch(){const t=todayStr();if(ST.last===t)return;const y=new Date();y.setDate(y.getDate()-1);let ok=ST.last===todayStr(y);if(!ok&&y.getDay()===6){const f=new Date();f.setDate(f.getDate()-2);ok=ST.last===todayStr(f)}ST.streak=ok?ST.streak+1:1;ST.last=t;save();hud()}
 function level(xp){let i=0;for(let k=0;k<LEVELS.length;k++)if(xp>=LEVELS[k][0])i=k;return i}
 function addXP(n){const before=level(ST.xp);ST.xp+=n;touch();save();hud();const after=level(ST.xp);if(after>before)toast("Promoted: "+LEVELS[after][1])}
 function hud(){
@@ -848,8 +848,8 @@ V.home=()=>{
       <div class="row"><a class="btn primary" href="#quiz" style="text-decoration:none">Start a quiz</a><a class="btn" href="#cards" style="text-decoration:none">Review flashcards</a></div>
     </div>
     <div class="sheet">
-      <div class="row" style="justify-content:space-between"><h3>Six-day plan</h3><span class="note">${PLAN.filter(p=>ST.plan[p[0]]).length}/7 done</span></div>
-      <ul class="clean plan" style="margin-top:6px">${PLAN.map(([ds,dn,txt],i)=>`<li class="${ST.plan[ds]?"done":""}"><input type="checkbox" id="pl${i}" data-d="${ds}" ${ST.plan[ds]?"checked":""}><span class="d ${ds===t?"today":""}">${dn}${ds===t?" ●":""}</span><label for="pl${i}">${esc(txt)}</label></li>`).join("")}</ul>
+      <div class="row" style="justify-content:space-between"><h3>Study plan</h3><span class="note">${PLAN.filter(p=>!p[3]&&ST.plan[p[0]]).length}/${PLAN.filter(p=>!p[3]).length} done</span></div>
+      <ul class="clean plan" style="margin-top:6px">${PLAN.map(([ds,dn,txt,rest],i)=>rest?`<li class="rest"><span style="width:17px;flex:none;text-align:center">✡</span><span class="d ${ds===t?"today":""}">${dn}${ds===t?" ●":""}</span><span class="muted">${esc(txt)}</span></li>`:`<li class="${ST.plan[ds]?"done":""}"><input type="checkbox" id="pl${i}" data-d="${ds}" ${ST.plan[ds]?"checked":""}><span class="d ${ds===t?"today":""}">${dn}${ds===t?" ●":""}</span><label for="pl${i}">${esc(txt)}</label></li>`).join("")}</ul>
     </div>
   </div>
   <div class="grid g3">${tiles.map(([h,n,dsc])=>`<a class="tile" href="${h}"><h3>${n}<span aria-hidden="true">→</span></h3><p class="muted">${dsc}</p></a>`).join("")}</div>
