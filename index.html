@@ -85,7 +85,7 @@ main{padding-block:28px 64px}
 .tag.okt{background:var(--ok-soft);color:var(--ok)}
 a.tag{text-decoration:none;cursor:pointer;white-space:normal}
 textarea{border:1px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:9px 12px;width:100%;box-sizing:border-box;font:inherit;font-size:15px;line-height:1.45;resize:vertical}
-input[type="search"],input[type="text"]{border:1px solid var(--rule);background:var(--sheet);border-radius:8px;padding:9px 12px;min-width:0;width:100%}
+input[type="search"],input[type="text"],input[type="password"]{border:1px solid var(--rule);background:var(--sheet);border-radius:8px;padding:9px 12px;min-width:0;width:100%}
 .bar{height:8px;border-radius:4px;background:var(--sheet-2);overflow:hidden;border:1px solid var(--rule)}
 .bar i{display:block;height:100%;background:var(--robe)}
 .callout{border-left:3px solid var(--seal);background:var(--gold-soft);padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px}
@@ -724,6 +724,7 @@ TERMS.push(
  ["Site-specific right","Powley: Métis rights attach to a particular area and historic community; they aren't free-floating across a province."],
  ["Marshall II","The SCC's unusual second set of reasons (1999), after a backlash by commercial fishers, confirming Ottawa can regulate the Mi'kmaq treaty fishery."],
  ["Unconscionable","So unfair it can't be allowed. Marshall: unconscionable for the Crown to rely on written treaty terms while ignoring oral ones."],
+ ["Legal realism","The view that law is what judges and officials actually do, shaped by real people, social context and consequences, not just the words of the statute."],
  ["Manoomin","Anishinaabemowin for wild rice, 'the good seed'. The centre of the dispute in Cottagers & Indians."],
  ["Food sovereignty","A community's right to control its own food sources, e.g., James Whetung's wild rice harvest in Cottagers & Indians."]
 );
@@ -1419,17 +1420,19 @@ const LA_LAW=[
  ["R v Sparrow (1990)","s. 35 rights are real but not absolute. Government can limit them only with a valid objective (e.g., conservation or public safety) while upholding the honour of the Crown: priority for the Indigenous right, minimal impairment, and consultation. Sparrow also rejected treating an Aboriginal fishing right as equal to non-Indigenous property interests. Use it like this: a safety buffer could be justified, but only after consulting Curve Lake."],
  ["R v Marshall (1999)","A treaty right can include selling the harvest to earn a 'moderate livelihood', so commercial activity isn't automatically illegitimate. Marshall II added that Ottawa can still regulate for conservation and other public objectives. The violent backlash at Burnt Church in 1999 is the same pattern as the confrontations on Pigeon Lake (see Trapped on the Water)."],
  ["R v Powley (2003)","Aboriginal rights are collective and site-specific: they belong to a community and attach to its traditional territory. That answers Larry's 'one individual's interpretation' point. James acts with his nation's written backing, inside Curve Lake's territory."],
+ ["Legal realism","Law is what judges and officials actually do, shaped by social reality, the people affected and the consequences, not just the written text. Best example from this unit: s. 35 has no limits clause, yet in Sparrow the Supreme Court created a test for limiting it. On Pigeon Lake, the written right says one thing, but what actually governs the lake is what officials do (no seeding rules, the buffer permit refused)."],
  ["s. 25","Charter rights can't be used to take away Aboriginal or treaty rights. Cottagers can't use s. 15 equality ('he only gets away with it because he's Indigenous') to cancel a s. 35 right."],
  ["No property rights in the Charter","The Charter deliberately leaves out property rights. Cottagers' claims rest on ordinary property law and navigation, which rank lower than the constitutional status of s. 35."],
  ["Ipperwash Inquiry (2007)","When governments let a land or resource dispute fester, it can turn violent (Dudley George, 1995). The inquiry recommended treating these as land and treaty rights issues and consulting and accommodating First Nations. On Pigeon Lake, the government's silence is pushing things toward 'war'."],
  ["Background, not in the film","Curve Lake is one of the seven Williams Treaties First Nations. In 2018, Canada and Ontario settled the Williams Treaties lawsuit and recognized these nations' treaty harvesting rights. That's a strong extra point for the 'treaty right' side."]
 ];
 const LA_THESES=[
- {k:"mid",t:"Middle ground: decide it together, nation to nation",best:true,
-  th:"The lakes are shared, so neither side should decide alone. Under s. 35 and Sparrow, Curve Lake's right to manoomin comes first, but governments can set fair limits after real consultation. A co-managed plan with rice zones and safety channels is the fair answer.",
-  e1:["Law: s. 35 protects Curve Lake's Aboriginal and treaty right to harvest and re-seed (the band letter), and s. 25 stops the Charter from cutting it down.","Sparrow lets government limit the right only for a valid objective like public safety, with priority and consultation. A 30 m buffer would be a justified limit, not a veto."],
-  e2:["Film: both sides already floated parts of a deal (the Woods' designated rice areas; James's 'nation to nation'), but government stayed silent for 8+ years and it became 'war', the Ipperwash pattern.","Osoyoos shows it works when settlers and First Nations cooperate 'on native terms' with 'mutual respect'. Taylor himself hopes for 'Cottagers With Indians'."],
-  ca:"Counter: James says compromise means giving up sovereignty. Response: Sparrow shows rights can be regulated without being destroyed, and a plan made nation to nation respects sovereignty rather than ignoring it."},
+ {k:"mine",t:"Your position: legally Curve Lake's, but shared through allotted rice zones",best:true,
+  th:"Legally, the stronger claim belongs to Curve Lake First Nation, whose s. 35 treaty right James Whetung is exercising. But the way he uses it, seeding right up to people's docks, harms neighbouring families far more than harvesting requires. The middle ground: after consulting Curve Lake nation to nation, the government should regulate the right with allotted zones for planting and harvesting wild rice, keeping docks and swimming areas clear.",
+  e1:["R v Sparrow: s. 35 rights are protected but not absolute. Government may regulate them if it has a compelling and substantial objective. Sparrow named conservation and preventing harm to the public; safe boating and swimming fit there. (Sparrow rejected a vague 'public interest' reason, so name the specific harm.)","The limit must uphold the honour of the Crown: the Indigenous right keeps priority, the infringement is as small as possible, and Curve Lake is consulted. Allotted zones pass: the rice keeps most of its 1,500+ acres and only a ~30 m buffer at docks stays clear, which is the Woods' own proposal."],
+  e2:["Legal realism: law is what judges and officials actually do, shaped by real people and consequences, not just the words on paper. s. 35 contains no limits clause at all, yet in Sparrow the Court read limits into it because unlimited rights wouldn't work in practice.","On Pigeon Lake the written right (the band letter) runs into real lives: Marilyn Wood's great-grandchildren can't swim, the Woods' sailboat has been stuck for five years, and Larry says 'I'll get shot someday', while James vows to plant until it's too thick to paddle. A realist reading says the law has to respond to those effects."],
+  ca:"Counter: James says this is 'nation to nation' and any limit attacks sovereignty. Response: the zones are set with Curve Lake, not imposed on it, and the rice keeps priority. Osoyoos shows that sharing on Indigenous terms leaves both sides better off.",
+  cn:"Whose lakes? Legally, Curve Lake's right comes first. Who decides? Government and Curve Lake together, not one person and not the cottagers alone. Is there a middle ground? Yes: allotted rice zones with clear water at docks, the 'Cottagers With Indians' Drew Hayden Taylor hopes for."},
  {k:"ind",t:"Curve Lake should decide",
   th:"These are Anishinaabe waters. Curve Lake's constitutionally protected rights should outweigh cottagers' recreational preferences, so the First Nation should decide how the lakes are used.",
   e1:["Law: s. 35 recognizes Aboriginal and treaty rights (and the 2018 Williams Treaties settlement recognized Curve Lake's harvesting rights). s. 25 shields them from Charter equality claims, and the Charter has no property rights.","Powley: rights are collective and site-specific, and Curve Lake as a nation has backed James in writing within its traditional territory."],
@@ -1443,14 +1446,27 @@ const LA_THESES=[
 ];
 const LA_FIELDS=[["th","Thesis (answer: whose lakes? who decides? middle ground?)"],["e1a","Evidence 1 · point a"],["e1b","Evidence 1 · point b"],["e2a","Evidence 2 · point a"],["e2b","Evidence 2 · point b"],["ca","Counter-argument and your response"],["cn","Conclusion"]];
 const LA_CHECK=[["q3","Answers all three questions: whose lakes, who decides, middle ground"],["ppl","Names at least two people from the film (e.g., James Whetung, Larry Wood)"],["s35","Explains s. 35 (Aboriginal and treaty rights)"],["case","Uses at least one case: Sparrow, Marshall or Powley"],["hist","Gives the historical cause: Trent-Severn dams drowned the rice"],["other","Takes on the other side fairly"],["concl","Ends with a clear verdict"]];
+const LA_PIN="ba0c479ffa282f58dbaacd1e4bcb0a3d39f6e509b95ea4bedbd69fcba1e63fbe";
+let LA_OK=false;
+function laUnlocked(){if(LA_OK)return true;try{return sessionStorage.getItem("cb-la")===LA_PIN}catch(e){return false}}
+async function sha256(t){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function laGate(){
+  app.innerHTML=`<section class="view"><div><span class="eyebrow">Long answer</span><h1>This page is locked</h1></div>
+   <form class="sheet" id="la-gate" style="display:grid;gap:12px;max-width:380px"><label style="display:grid;gap:6px"><span style="font-weight:650">Password</span><input type="password" inputmode="numeric" autocomplete="off" id="la-pw"></label>
+   <div class="row"><button class="btn primary" type="submit">Unlock</button></div><p class="note" id="la-msg" role="status" aria-live="polite"></p></form></section>`;
+  const pw=$("#la-pw");pw.focus({preventScroll:true});
+  $("#la-gate").onsubmit=async e=>{e.preventDefault();let h="";try{h=await sha256(pw.value.trim())}catch(err){$("#la-msg").textContent="This browser can't check the password.";return}
+    if(h===LA_PIN){LA_OK=true;try{sessionStorage.setItem("cb-la",h)}catch(err){}V["long-answer"]()}else{$("#la-msg").textContent="Wrong password.";pw.value="";pw.focus()}};
+}
 V["long-answer"]=()=>{
+  if(!laUnlocked())return laGate();
   ST.la=ST.la||{};ST.lac=ST.lac||{};
   app.innerHTML=`<section class="view"><div><span class="eyebrow">Long answer · Cottagers &amp; Indians (CBC Docs POV)</span><h1>Whose lakes are these?</h1></div>
    <div class="sheet" style="display:grid;gap:10px"><h3>Your question</h3>
      <p class="serif" style="font-size:17px;max-width:70ch">James Whetung of Curve Lake First Nation seeds Pigeon Lake and other shallow lakes with wild rice (manoomin, "the good seed"). Thousands of residents and cottagers say it ruins boating and swimming.</p>
      <ol class="steps" style="font-size:16px;font-weight:650"><li>Whose lakes are these?</li><li>Who gets to decide how they are used and enjoyed?</li><li>Is there a middle ground?</li></ol>
      <p class="note">Your worksheet's structure: <b>Thesis → Evidence 1 (2 points) → Evidence 2 (2 points)</b>. Strong answers mix film evidence (names, numbers, scenes) with law (s. 35 and a case).</p>
-     <div class="row"><a class="btn" href="${YT}" target="_blank" rel="noopener" style="text-decoration:none">Watch the film (44 min) ↗</a><a class="btn primary" href="#la-plan" id="la-jump" style="text-decoration:none">Jump to the planner</a></div></div>
+     <div class="row"><a class="btn" href="${YT}" target="_blank" rel="noopener" style="text-decoration:none">Watch the film (44 min) ↗</a><a class="btn primary" href="#la-plan" id="la-jump" style="text-decoration:none">Jump to the planner</a><button class="btn ghost" id="la-lock" type="button">Lock page</button></div></div>
 
    <div class="sheet"><h2>The film, scene by scene</h2><p class="note" style="margin:4px 0 10px">Tap a time to open YouTube at that moment.</p>
      <ul class="clean" style="display:grid;gap:8px">${LA_MOMENTS.map(([t,x])=>{const p=t.split(":").map(Number),s=p[0]*60+p[1];return `<li class="row" style="align-items:flex-start;flex-wrap:nowrap"><a class="tag" href="${YT}&t=${s}s" target="_blank" rel="noopener" style="min-width:44px;text-align:center">${t}</a><span style="font-size:14.5px">${esc(x)}</span></li>`}).join("")}</ul></div>
@@ -1460,8 +1476,8 @@ V["long-answer"]=()=>{
    <div class="sheet" style="display:grid;gap:12px"><div><h2>Connect it to the law</h2><p class="note">This is where the marks are. Film evidence shows <i>what</i> happened; the law shows <i>who is right</i>.</p></div>
      <div class="grid g2">${LA_LAW.map(([h,x])=>`<div style="border-left:3px solid var(--robe);padding:4px 0 4px 12px"><b>${esc(h)}</b><p style="font-size:14.5px;margin:4px 0 0">${esc(x)}</p></div>`).join("")}</div></div>
 
-   <div style="display:grid;gap:12px"><div><h2>Pick a thesis</h2><p class="note">Three defensible positions, each with two pieces of evidence. The first one is the easiest to argue well because it answers all three questions and uses the most law. Any of them can earn full marks if you back it up.</p></div>
-     ${LA_THESES.map(T=>`<details class="sheet" ${T.best?"open":""}><summary style="cursor:pointer"><b style="font-size:16.5px">${esc(T.t)}</b> ${T.best?`<span class="tag gold">Recommended</span>`:""}</summary>
+   <div style="display:grid;gap:12px"><div><h2>Pick a thesis</h2><p class="note">The first outline is your position, built from your own argument. The other two are what each side would argue. Read them so your counter-argument hits their strongest points.</p></div>
+     ${LA_THESES.map(T=>`<details class="sheet" ${T.best?"open":""}><summary style="cursor:pointer"><b style="font-size:16.5px">${esc(T.t)}</b> ${T.best?`<span class="tag gold">Your thesis</span>`:""}</summary>
        <div style="display:grid;gap:10px;margin-top:10px;font-size:14.5px"><p class="serif" style="font-size:16px"><b>Thesis:</b> ${esc(T.th)}</p>
        <div><b>Evidence 1</b><ul style="margin:4px 0 0;padding-left:18px">${T.e1.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
        <div><b>Evidence 2</b><ul style="margin:4px 0 0;padding-left:18px">${T.e2.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
@@ -1477,8 +1493,9 @@ V["long-answer"]=()=>{
   const wc=()=>{const n=LA_FIELDS.map(([k])=>ST.la[k]||"").join(" ").trim().split(/\s+/).filter(Boolean).length;$("#la-wc").textContent=n+" words"};wc();
   let t=null;const fit=ta=>{ta.style.height="auto";ta.style.height=ta.scrollHeight+2+"px"};$$("textarea[data-la]").forEach(ta=>{fit(ta);ta.oninput=()=>{fit(ta);ST.la[ta.dataset.la]=ta.value;wc();clearTimeout(t);t=setTimeout(save,400)}});
   $$("[data-use]").forEach(b=>b.onclick=()=>{const T=LA_THESES.find(x=>x.k===b.dataset.use);const has=LA_FIELDS.some(([k])=>(ST.la[k]||"").trim());if(has&&!confirm("Replace what's in your planner?"))return;
-    ST.la={th:T.th,e1a:T.e1[0],e1b:T.e1[1],e2a:T.e2[0],e2b:T.e2[1],ca:T.ca,cn:""};save();V["long-answer"]();$("#la-plan").scrollIntoView({behavior:"smooth"});toast("Outline loaded. Now rewrite it in your own words.")});
+    ST.la={th:T.th,e1a:T.e1[0],e1b:T.e1[1],e2a:T.e2[0],e2b:T.e2[1],ca:T.ca,cn:T.cn||""};save();V["long-answer"]();$("#la-plan").scrollIntoView({behavior:"smooth"});toast("Outline loaded. Now rewrite it in your own words.")});
   $("#la-jump").onclick=e=>{e.preventDefault();$("#la-plan").scrollIntoView({behavior:"smooth"})};
+  $("#la-lock").onclick=()=>{LA_OK=false;try{sessionStorage.removeItem("cb-la")}catch(e){}laGate()};
   $("#la-copy").onclick=async()=>{const txt=LA_FIELDS.map(([k,l])=>l.toUpperCase()+"\n"+(ST.la[k]||"")).join("\n\n");try{await navigator.clipboard.writeText(txt);toast("Copied")}catch(e){toast("Couldn't copy on this browser")}};
   $("#la-clear").onclick=()=>{if(confirm("Clear your planner?")){ST.la={};save();V["long-answer"]()}};
   $$("[data-lac]").forEach(cb=>cb.onchange=()=>{ST.lac[cb.dataset.lac]=cb.checked;if(cb.checked)addXP(5);save();cb.closest("li").classList.toggle("done",cb.checked)});
