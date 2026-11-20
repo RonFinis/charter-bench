@@ -84,6 +84,21 @@ main{padding-block:28px 64px}
 .tag.plain{background:var(--sheet-2);color:var(--muted);border:1px solid var(--rule)}
 .tag.okt{background:var(--ok-soft);color:var(--ok)}
 a.tag{text-decoration:none;cursor:pointer;white-space:normal}
+.ol-block{border-left:3px solid var(--robe);padding:2px 0 2px 12px;min-width:0}
+.ol-list{margin:6px 0 0;padding-left:18px;display:grid;gap:4px;font-size:14.5px}
+.ol-list .ol-sub{list-style:none;margin-left:-6px}
+.ol-list .ol-sub>.ol-list{margin-top:0;font-size:14px}
+@media print{
+  body.print-outline>*:not(main){display:none!important}
+  body.print-outline #app>section>*:not(#la-outline){display:none!important}
+  body.print-outline #la-outline{border:0;padding:0;background:#fff;color:#000}
+  body.print-outline #la-outline .btn,body.print-outline .no-print{display:none!important}
+  body.print-outline #la-outline .grid{grid-template-columns:1fr 1fr;gap:10px}
+  body.print-outline .ol-list{font-size:11.5px}
+  body.print-outline,body.print-outline #app{background:#fff!important}
+  body.print-outline #la-outline *{color:#000!important;background:transparent!important}
+  body.print-outline .ol-block{border-left-color:#000}
+}
 textarea{border:1px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:9px 12px;width:100%;box-sizing:border-box;font:inherit;font-size:15px;line-height:1.45;resize:vertical}
 input[type="search"],input[type="text"],input[type="password"]{border:1px solid var(--rule);background:var(--sheet);border-radius:8px;padding:9px 12px;min-width:0;width:100%}
 .bar{height:8px;border-radius:4px;background:var(--sheet-2);overflow:hidden;border:1px solid var(--rule)}
@@ -1444,6 +1459,15 @@ const LA_THESES=[
   e2:["Film: the rice grew from about 200 to 1,800+ acres, more than one person can harvest, and the Woods' grandchildren can't swim.","It's not about race: Bear Taylor, a Curve Lake business owner, opposes rice near his docks too."],
   ca:"Counter: this repeats colonial control over Indigenous resources. Response: Sparrow requires consultation and priority for the Indigenous right, so regulation must be shaped with Curve Lake, not imposed on it."}
 ];
+const LA_OUTLINE=[
+ ["1. Intro","~70 words",["Hook: Pigeon Lake beside Curve Lake First Nation. James Whetung seeds manoomin (\"the good seed\"); Larry & Marilyn Wood lead the cottagers against it.","Context: rice grew from ~200 to 1,500–1,800 acres in about 10 years.",["THESIS: Legally, the right is Curve Lake's (s. 35). But after consulting Curve Lake, the government should REGULATE it with ALLOTTED RICE ZONES that keep docks and swimming areas clear. That is the middle ground."]]],
+ ["2. Evidence 1: R v Sparrow (1990)","~130 words",["s. 35 rights are recognized but NOT absolute. Government can limit or regulate them, not rewrite them.","Step 1: a compelling and substantial objective. Conservation and PREVENTING HARM TO THE PUBLIC count; a vague \"public interest\" doesn't.",["Here it's safety: rice jams engines and pushes boats close to swimmers, and the Woods' sailboat has been stuck for 5 years."],"Step 2, honour of the Crown:",["PRIORITY: the rice keeps most of the lake.","MINIMAL IMPAIRMENT: only a ~30 m buffer at docks (the Woods' own idea).","CONSULTATION with Curve Lake."],"Link: allotted zones pass the Sparrow test."]],
+ ["3. Evidence 2: Legal realism","~130 words",["Definition: law is what judges and officials ACTUALLY DO, shaped by real people and consequences, not just the text.","Proof: s. 35 has NO limits clause, yet the Supreme Court created limits in Sparrow because the right had to work in practice.","On Pigeon Lake, the written right (band letter, s. 35) runs into real lives:",["Marilyn's great-grandchildren can't swim.","James vows to plant until it's \"too thick to paddle\".","Larry: \"I'll get shot someday.\""],"There's no rule on seeding, clearing rice is illegal, and the buffer permit was refused. Officials' silence is what's driving the conflict, so the law has to respond."]],
+ ["4. Counter + response","~70 words",["James: \"nation to nation… a sovereignty issue.\" Dams flooded the rice beds 100+ years ago, and the land was taken.","Response: the zones are set WITH Curve Lake, not imposed on it, and the rice keeps priority.","Osoyoos (Chief Clarence Louie): sharing \"on native terms\" with mutual respect lets both sides thrive."]],
+ ["5. Conclusion","~50 words",["Whose lakes? Legally, Curve Lake's right comes first.","Who decides? Government and Curve Lake together, not one man and not the cottagers alone.","Middle ground? Yes: allotted zones. Drew Hayden Taylor hopes for \"Cottagers WITH Indians\"."]]
+];
+const LA_TIPS=["Underline your thesis on the sheet and restate it in your last line.","Name people (Whetung, Wood, Clarence Louie) and give numbers (1,800 acres, 30 m, 100+ years). Specifics earn marks.","Say \"regulate\" or \"limit\", never \"change the treaty\".","Short on time? Cut paragraph 4 to two sentences. Never skip the conclusion."];
+function olList(items){return `<ul class="ol-list">${items.map(x=>Array.isArray(x)?`<li class="ol-sub">${olList(x)}</li>`:`<li>${esc(x)}</li>`).join("")}</ul>`}
 const LA_FIELDS=[["th","Thesis (answer: whose lakes? who decides? middle ground?)"],["e1a","Evidence 1 · point a"],["e1b","Evidence 1 · point b"],["e2a","Evidence 2 · point a"],["e2b","Evidence 2 · point b"],["ca","Counter-argument and your response"],["cn","Conclusion"]];
 const LA_CHECK=[["q3","Answers all three questions: whose lakes, who decides, middle ground"],["ppl","Names at least two people from the film (e.g., James Whetung, Larry Wood)"],["s35","Explains s. 35 (Aboriginal and treaty rights)"],["case","Uses at least one case: Sparrow, Marshall or Powley"],["hist","Gives the historical cause: Trent-Severn dams drowned the rice"],["other","Takes on the other side fairly"],["concl","Ends with a clear verdict"]];
 const LA_PIN="ba0c479ffa282f58dbaacd1e4bcb0a3d39f6e509b95ea4bedbd69fcba1e63fbe";
@@ -1467,6 +1491,13 @@ V["long-answer"]=()=>{
      <ol class="steps" style="font-size:16px;font-weight:650"><li>Whose lakes are these?</li><li>Who gets to decide how they are used and enjoyed?</li><li>Is there a middle ground?</li></ol>
      <p class="note">Your worksheet's structure: <b>Thesis → Evidence 1 (2 points) → Evidence 2 (2 points)</b>. Strong answers mix film evidence (names, numbers, scenes) with law (s. 35 and a case).</p>
      <div class="row"><a class="btn" href="${YT}" target="_blank" rel="noopener" style="text-decoration:none">Watch the film (44 min) ↗</a><a class="btn primary" href="#la-plan" id="la-jump" style="text-decoration:none">Jump to the planner</a><button class="btn ghost" id="la-lock" type="button">Lock page</button></div></div>
+
+   <div class="sheet" id="la-outline" style="display:grid;gap:12px">
+     <div class="row" style="justify-content:space-between;align-items:flex-start"><div><span class="eyebrow">For your one-sided sheet · ≈450 words · 1–2 pages double-spaced</span><h2>Whose lakes? Your outline</h2></div><button class="btn" id="la-print" type="button">Print outline</button></div>
+     <p class="note no-print">Copy keywords onto your sheet, not full sentences, so on test day you're writing the answer, not copying it.</p>
+     <div class="grid g2" style="align-items:start">${LA_OUTLINE.map(([h,wds,items])=>`<div class="ol-block"><div class="row" style="justify-content:space-between;align-items:baseline"><h3 style="font-size:16px">${esc(h)}</h3><span class="tag plain">${wds}</span></div>${olList(items)}</div>`).join("")}
+       <div class="ol-block"><h3 style="font-size:16px">Tips for test day</h3>${olList(LA_TIPS)}</div></div>
+   </div>
 
    <div class="sheet"><h2>The film, scene by scene</h2><p class="note" style="margin:4px 0 10px">Tap a time to open YouTube at that moment.</p>
      <ul class="clean" style="display:grid;gap:8px">${LA_MOMENTS.map(([t,x])=>{const p=t.split(":").map(Number),s=p[0]*60+p[1];return `<li class="row" style="align-items:flex-start;flex-wrap:nowrap"><a class="tag" href="${YT}&t=${s}s" target="_blank" rel="noopener" style="min-width:44px;text-align:center">${t}</a><span style="font-size:14.5px">${esc(x)}</span></li>`}).join("")}</ul></div>
@@ -1495,6 +1526,7 @@ V["long-answer"]=()=>{
   $$("[data-use]").forEach(b=>b.onclick=()=>{const T=LA_THESES.find(x=>x.k===b.dataset.use);const has=LA_FIELDS.some(([k])=>(ST.la[k]||"").trim());if(has&&!confirm("Replace what's in your planner?"))return;
     ST.la={th:T.th,e1a:T.e1[0],e1b:T.e1[1],e2a:T.e2[0],e2b:T.e2[1],ca:T.ca,cn:T.cn||""};save();V["long-answer"]();$("#la-plan").scrollIntoView({behavior:"smooth"});toast("Outline loaded. Now rewrite it in your own words.")});
   $("#la-jump").onclick=e=>{e.preventDefault();$("#la-plan").scrollIntoView({behavior:"smooth"})};
+  $("#la-print").onclick=()=>{document.body.classList.add("print-outline");const done=()=>{document.body.classList.remove("print-outline");window.removeEventListener("afterprint",done)};window.addEventListener("afterprint",done);window.print();setTimeout(done,1500)};
   $("#la-lock").onclick=()=>{LA_OK=false;try{sessionStorage.removeItem("cb-la")}catch(e){}laGate()};
   $("#la-copy").onclick=async()=>{const txt=LA_FIELDS.map(([k,l])=>l.toUpperCase()+"\n"+(ST.la[k]||"")).join("\n\n");try{await navigator.clipboard.writeText(txt);toast("Copied")}catch(e){toast("Couldn't copy on this browser")}};
   $("#la-clear").onclick=()=>{if(confirm("Clear your planner?")){ST.la={};save();V["long-answer"]()}};
