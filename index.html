@@ -84,6 +84,7 @@ main{padding-block:28px 64px}
 .tag.plain{background:var(--sheet-2);color:var(--muted);border:1px solid var(--rule)}
 .tag.okt{background:var(--ok-soft);color:var(--ok)}
 a.tag{text-decoration:none;cursor:pointer;white-space:normal}
+textarea{border:1px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:9px 12px;width:100%;box-sizing:border-box;font:inherit;font-size:15px;line-height:1.45;resize:vertical}
 input[type="search"],input[type="text"]{border:1px solid var(--rule);background:var(--sheet);border-radius:8px;padding:9px 12px;min-width:0;width:100%}
 .bar{height:8px;border-radius:4px;background:var(--sheet-2);overflow:hidden;border:1px solid var(--rule)}
 .bar i{display:block;height:100%;background:var(--robe)}
@@ -259,6 +260,7 @@ img{max-width:100%}
     <a href="#indigenous">Indigenous Rights</a>
     <a href="#human-rights">Human Rights</a>
     <a href="#films">Films</a>
+    <a href="#long-answer">Long Answer</a>
   </div>
 </nav>
 <main class="wrap" id="app"></main>
@@ -640,6 +642,12 @@ Q.push(
  ["film","Cottagers & Indians (2020) is mainly about…",["James Whetung of Curve Lake First Nation planting wild rice on Pigeon Lake, and cottagers who object","Police carding in Toronto","Lobster fishing in Nova Scotia","The Ipperwash occupation"],"Made by Anishinaabe writer Drew Hayden Taylor."],
  ["film","How does James Whetung justify harvesting wild rice?",["As a treaty right and food sovereignty","With a business licence","Under Charter s. 6","With a provincial park permit"],"Cottagers see it as a nuisance on 'their' lake."],
  ["film","Trapped on the Water (2025) connects most directly to which case?",["R v Marshall: the Mi'kmaq 'moderate livelihood' lobster fishery","R v Powley","Carter v Canada","R v Oakes"],"Over 25 years after Marshall, 'moderate livelihood' still has no agreed definition."],
+ ["film","In Cottagers & Indians, why are the lakes near Curve Lake warm and shallow, and why did the old rice beds disappear?",["The Trent-Severn Waterway's locks and dams raised the water over a century ago","A drought in the 1990s","Cottagers dredged the lakes to build docks","Climate change melted the glaciers"],"Flooding for the Trent-Severn drowned historic rice beds and created shallow lakes that suit both cottages and wild rice."],
+ ["film","Which Curve Lake First Nation member sides with the cottagers about rice near his business?",["Bear Taylor, a marina owner","Drew Hayden Taylor","Chief Clarence Louie","Michelle Fraser"],"Bear Taylor says rice by his docks would cut off boats and hurt his livelihood. It shows the conflict isn't split purely along racial lines."],
+ ["film","What does the Curve Lake band office letter say James Whetung has?",["s. 35 Aboriginal and treaty rights to harvest and re-seed manoomin in Curve Lake's traditional territory","A provincial farming permit","A Charter s. 2(a) right to religion","Ownership of Pigeon Lake"],"The letter relies on s. 35 of the Constitution Act, 1982. It's the nation's position, not a court ruling."],
+ ["film","Which community does Drew Hayden Taylor visit as an example of First Nations and settlers making it work?",["Osoyoos Indian Band in BC (Chief Clarence Louie)","Shoal Lake 40","Sauble Beach","Burnt Church"],"Osoyoos leases land for non-Indigenous homes and runs many businesses: cooperation 'on native terms' with mutual respect."],
+ ["film","Why did Shoal Lake 40 end up without clean water?",["Under s. 46 of the Indian Act, reserve land was taken without consultation for Winnipeg's aqueduct","The lake dried up","The community sold its water rights","A treaty gave the water to Manitoba"],"Winnipeg got clean water while Shoal Lake 40 was cut off as an island and lived under a boil-water advisory for about 20 years."],
+ ["film","What compromise do Larry and Marilyn Wood propose?",["Designated wild-rice areas and a roughly 30 m safety buffer from docks","Banning all wild rice","Buying the reserve","Moving the cottages"],"They say the federal government refused the buffer permit because the First Nation wouldn't agree."],
  ["film","What do Cottagers & Indians and Trapped on the Water have in common?",["Conflict when Indigenous people exercise harvesting rights and non-Indigenous neighbours object","Both are about assisted dying","Both are about police carding","Both are set in Toronto"],"Both show rights won in court still depend on governments and neighbours respecting them."],
  ["film","Which unit topics does The Skin We're In connect to most directly?",["Police carding and systemic racism (Charter ss. 9 and 15)","Section 35 treaty rights","The notwithstanding clause","Minority language education"],"It started from Cole's 2015 Toronto Life essay 'The Skin I'm In'."]
 );
@@ -698,6 +706,10 @@ const TF = [
  ["hr","Prejudice is an action, while discrimination is an attitude.",false,"Reversed: prejudice is an attitude or opinion; discrimination is the action."],
  ["hr","At a human rights tribunal, the standard of proof is beyond a reasonable doubt.",false,"Balance of probabilities."],
  ["film","The Skin We're In focuses on anti-Black racism and police carding in Canada.",true,"Desmond Cole, 2017."],
+ ["film","In Cottagers & Indians, it is illegal for residents to clear or dredge wild rice from the lakes.",true,"Clearing is illegal, but no law says anything about seeding, which is why the conflict escalates."],
+ ["film","A specific law bans anyone from seeding wild rice in the Trent-Severn Waterway.",false,"Larry Wood's complaint is that there is NO regulation either way on seeding."],
+ ["film","In the film, everyone at Curve Lake First Nation supports James Whetung's planting.",false,"Bear Taylor, a Curve Lake marina owner, opposes rice near his docks."],
+ ["film","Drew Hayden Taylor ends Cottagers & Indians by saying he can see both sides.",true,"He supports James's mission, but says people and their needs are real and hopes for 'Cottagers With Indians'."],
  ["film","Cottagers & Indians is about the lobster fishery in Nova Scotia.",false,"It's about wild rice on Pigeon Lake, Ontario. The lobster fishery is Trapped on the Water."],
  ["film","Trapped on the Water deals with the Mi'kmaq moderate livelihood fishery that comes from the Marshall decision.",true,"CBC's The Fifth Estate, 2025."]
 ];
@@ -712,6 +724,7 @@ TERMS.push(
  ["Site-specific right","Powley: Métis rights attach to a particular area and historic community; they aren't free-floating across a province."],
  ["Marshall II","The SCC's unusual second set of reasons (1999), after a backlash by commercial fishers, confirming Ottawa can regulate the Mi'kmaq treaty fishery."],
  ["Unconscionable","So unfair it can't be allowed. Marshall: unconscionable for the Crown to rely on written treaty terms while ignoring oral ones."],
+ ["Manoomin","Anishinaabemowin for wild rice, 'the good seed'. The centre of the dispute in Cottagers & Indians."],
  ["Food sovereignty","A community's right to control its own food sources, e.g., James Whetung's wild rice harvest in Cottagers & Indians."]
 );
 
@@ -809,7 +822,7 @@ const PLAN = [
  ["2026-11-19","Thu","The 5 Charter cases: Oakes, Carter, Bissonnette, A.C., TWU. Play Be the Judge + Case Match. Then human rights terms, the Ontario Code and the UDHR."],
  ["2026-11-20","Fri","Before Shabbat: Indigenous rights (s. 35, s. 25, Sparrow, Powley, Marshall, Ipperwash, the organizer) + Trapped on the Water and Cottagers & Indians."],
  ["2026-11-21","Sat","Shabbat. No studying, the plan already fits around it.",true],
- ["2026-11-22","Sun","Carding, systemic racism + The Skin We're In. Plan your long answer. Two test simulations, then re-do every flashcard still in box 1–2."],
+ ["2026-11-22","Sun","Carding, systemic racism + The Skin We're In. Plan your long answer (Long Answer page). Two test simulations, then re-do every flashcard still in box 1–2."],
  ["2026-11-23","Mon","15-minute warm-up: Lightning round. Good luck!"]
 ];
 
@@ -873,7 +886,7 @@ V.home=()=>{
       <div class="row"><span class="tag">10 multiple choice</span><span class="tag">5 true/false</span><span class="tag gold">1 long answer</span></div>
       <p style="font-size:14.5px">The <b>Test simulation</b> in Quiz Arena gives you exactly 10 MC + 5 T/F, scored at the end. There's also a True/False drill.</p>
       <div class="row"><a class="btn primary" href="#quiz" id="simgo" style="text-decoration:none">Take a test simulation</a></div>
-      <p class="note">Long answer: your teacher's question will be added here once you share it.</p>
+      <p style="font-size:14.5px"><b>Long answer:</b> "Whose lakes are these?" on <i>Cottagers &amp; Indians</i>.</p><div class="row"><a class="btn" href="#long-answer" style="text-decoration:none">Plan your long answer</a></div>
     </div>
   </div>
   <div class="sheet" style="display:grid;gap:14px">
@@ -1342,7 +1355,7 @@ V.films=()=>{
     links:[["R v Marshall (1999)","the treaty right to a moderate livelihood"],["Marshall II","Ottawa can regulate the treaty fishery"],["s. 35","treaty rights; Sparrow justification (conservation)"],["Honour of the Crown","governments must implement rights honourably"]],
     ask:["Why are the Mi'kmaq still fighting more than 25 years after winning Marshall?","DFO cites conservation. Under Sparrow, is conservation alone enough to justify limiting a treaty right?","Why is 'moderate livelihood' so hard to define, and who should define it?"]},
    {t:"Cottagers & Indians",y:2020,by:"CBC Docs POV documentary by Drew Hayden Taylor (Anishinaabe writer from Curve Lake First Nation), adapted from his 2018 play",
-    about:"James Whetung of Curve Lake First Nation plants and harvests wild rice (manoomin) on Pigeon Lake in Ontario's Kawarthas. Cottage owners object that the rice beds clog the lake for boating and swimming and hurt property values. Whetung says it's his treaty right and a matter of food sovereignty and health. Taylor also looks at similar land and water disputes elsewhere in Canada.",
+    about:"James Whetung of Curve Lake First Nation plants and harvests wild rice (manoomin) on Pigeon Lake in Ontario's Kawarthas. Residents and cottagers, led by Larry and Marilyn Wood, say the rice beds make boating and swimming nearly impossible from July to September. Whetung says it's his treaty right and a matter of food sovereignty and health. Taylor also looks at similar land and water disputes elsewhere in Canada.",
     links:[["Treaty & Aboriginal rights","s. 35; harvesting rights"],["Rights in conflict","Indigenous harvesting vs. cottagers' property and recreation"],["Duty to consult","who decides how a shared lake is used?"],["Ipperwash parallel","land and resource disputes between neighbours and First Nations"]],
     ask:["Whose claim to Pigeon Lake should win, and why?","How is this conflict similar to the lobster dispute in Trapped on the Water?","How could the government use consultation to prevent a conflict like this?"]}
   ];
@@ -1353,6 +1366,122 @@ V.films=()=>{
      <div><h3 style="font-size:15px">Connects to</h3><div class="grid g2" style="margin-top:6px;gap:8px">${f.links.map(([a,b])=>`<div><span class="tag">${esc(a)}</span> <span style="font-size:14px">${esc(b)}</span></div>`).join("")}</div></div>
      <details><summary style="cursor:pointer;font-weight:650">Practice questions</summary><ol class="steps" style="margin-top:8px">${f.ask.map(q=>`<li>${esc(q)}</li>`).join("")}</ol></details></div>`).join("")}</div>
    <p class="flag">Add your own notes from watching in class. Specific scenes and quotes you remember will make your long answer stronger than any summary here.</p></section>`;
+};
+
+/* ---------- Long answer: Cottagers & Indians ---------- */
+const YT="https://www.youtube.com/watch?v=p9k42UkDvxc";
+const LA_MOMENTS=[
+ ["1:16","Drew Hayden Taylor, an Anishinaabe writer, introduces Curve Lake First Nation, about two hours from Toronto. Every summer, thousands of people call the area 'cottage country'."],
+ ["3:18","Larry Wood leads hundreds of local residents against the spreading wild rice."],
+ ["3:50","James Whetung of Curve Lake seeds the lakes with manoomin and calls his opponents racist. He says the opposition is 'an attack against our culture'."],
+ ["6:01","Marilyn Wood says, 'This is not a cottage. This is our home.' Her grandchildren and great-grandchildren can't boat, water-ski or swim from July on."],
+ ["6:51","The Woods' numbers: about 200 acres of rice ten years ago, now 1,500–1,800 acres. They say it jams boat engines and is a danger to navigation."],
+ ["9:57","Wild rice has been used here for about 4,000 years. When James was a teenager it was nearly extinct, so he started replanting it near the reserve."],
+ ["10:38","Cottagers' line: harvesting rice that grows naturally is his right, but planting a 'farm in public waters' to sell commercially isn't. James does sell seed."],
+ ["12:11","The sides aren't split by race. Bear Taylor runs a marina on the Curve Lake reserve and doesn't want rice near his docks because it would hurt his business."],
+ ["13:46","Dr. Michelle Fraser grew up water-skiing on Pigeon Lake and is now James's partner. She says, 'It is my people that destroyed the rice.'"],
+ ["14:59","Over a century ago, the Trent-Severn Waterway's locks and dams raised the water. That drowned the old rice beds and created warm, shallow lakes that suit both cottages and wild rice."],
+ ["15:44","Cottagers say they own the land under the water. One cottager says James told a meeting he doesn't need a permit 'because I'm Indigenous'. This is the cottager's account; James isn't shown saying it."],
+ ["16:36","Clearing or dredging wild rice is illegal, but no law says anything about seeding it, even in front of someone's dock."],
+ ["17:46","Shoal Lake 40: under s. 46 of the Indian Act, Winnipeg took the reserve's water for a 155 km aqueduct. The community was cut off as an island under a boil-water advisory for about 20 years, until 'Freedom Road' was built."],
+ ["23:13","Sauble Beach: the Saugeen First Nation claims land surrendered but never sold, and the federal Crown agrees. The town says it bought the land legally. The chief says for cottagers it would be 'a change of landlords'."],
+ ["26:12","James says the planting has to be seen as a response to historic injustice: 'Canadians removed us from the land.'"],
+ ["26:49","Larry Wood says no regulation settles whether seeding public waterways is legal, and he has waited eight years for the government to decide."],
+ ["27:48","James's side says there's a diabetes epidemic in Curve Lake and traditional food helps. A cottager says it's about profit and has nothing to do with diabetes."],
+ ["28:33","The Woods propose designated wild-rice areas. Michelle asks Larry to 'reconsider what beauty is' and calls the rice in front of his house 'Larry's garden, too'."],
+ ["30:04","Osoyoos, BC: Chief Clarence Louie's band runs a winery, a golf course and other businesses, has more jobs than band members, and leases land for non-Indigenous homes. Taylor's verdict: it works 'on native terms' with 'mutual respect'."],
+ ["33:48","The cottagers asked for a 30-metre safety buffer by their docks. They say the federal government refused the permit because the First Nation wouldn't agree."],
+ ["35:59","A letter from the Curve Lake band office says James has s. 35 Aboriginal and treaty rights to harvest and re-seed rice within Curve Lake's traditional territory."],
+ ["38:41","On the water, Larry offers a 'management plan'. James calls it 'nation to nation… a sovereignty issue' and vows to plant until it's too thick to paddle. Larry says, 'I'll get shot someday.'"],
+ ["42:36","Taylor's conclusion: settlers being forced off 'feels somewhat fair', but a grandmother is in tears. 'Issues are abstract, but people and their needs are real.' Governments won't act. He hopes for a sequel called 'Cottagers With Indians'."]
+];
+const LA_SIDES=[
+ ["Curve Lake / James Whetung",[
+   "Manoomin has been an Anishinaabe food for about 4,000 years. The colonial dams nearly wiped it out.",
+   "His nation's band office says he has s. 35 Aboriginal and treaty rights to harvest and re-seed in their traditional territory.",
+   "Food sovereignty and health: traditional food helps fight diabetes in the community.",
+   "Historic injustice: First Nations were pushed onto reserves while settlers took the land and water (Shoal Lake 40 is the same pattern).",
+   "It's 'nation to nation': Curve Lake isn't a group of residents asking cottagers for permission."]],
+ ["Cottagers / Larry and Marilyn Wood",[
+   "They built their homes and have lived on the lake for decades. Their families can't swim, boat or water-ski.",
+   "Safety: rice jams engines and pushes boats closer to swimmers along the shore.",
+   "Natural harvesting is fine, but seeding 1,800+ acres and selling seed goes beyond a traditional practice.",
+   "The Trent-Severn is a public waterway. They're not allowed to clear rice, but anyone can seed it.",
+   "They offered compromises (rice zones, a 30 m buffer) and say the government and the First Nation refused."]],
+ ["Not so simple",[
+   "Bear Taylor, an Indigenous marina owner, is against rice by his docks.",
+   "Michelle Fraser, a settler and former water-skier, helps James plant.",
+   "Drew Hayden Taylor is Anishinaabe and James's friend, yet he says 'all disagreements have two sides'.",
+   "No government has decided whether seeding is legal, so each side fills the gap its own way."]]
+];
+const LA_LAW=[
+ ["s. 35","Recognizes and affirms existing Aboriginal and treaty rights. It's in the Constitution but outside the Charter, so s. 1 and s. 33 don't apply. James's band letter relies on it. Remember that a band letter states the nation's position; it isn't a court ruling."],
+ ["R v Sparrow (1990)","s. 35 rights are real but not absolute. Government can limit them only with a valid objective (e.g., conservation or public safety) while upholding the honour of the Crown: priority for the Indigenous right, minimal impairment, and consultation. Sparrow also rejected treating an Aboriginal fishing right as equal to non-Indigenous property interests. Use it like this: a safety buffer could be justified, but only after consulting Curve Lake."],
+ ["R v Marshall (1999)","A treaty right can include selling the harvest to earn a 'moderate livelihood', so commercial activity isn't automatically illegitimate. Marshall II added that Ottawa can still regulate for conservation and other public objectives. The violent backlash at Burnt Church in 1999 is the same pattern as the confrontations on Pigeon Lake (see Trapped on the Water)."],
+ ["R v Powley (2003)","Aboriginal rights are collective and site-specific: they belong to a community and attach to its traditional territory. That answers Larry's 'one individual's interpretation' point. James acts with his nation's written backing, inside Curve Lake's territory."],
+ ["s. 25","Charter rights can't be used to take away Aboriginal or treaty rights. Cottagers can't use s. 15 equality ('he only gets away with it because he's Indigenous') to cancel a s. 35 right."],
+ ["No property rights in the Charter","The Charter deliberately leaves out property rights. Cottagers' claims rest on ordinary property law and navigation, which rank lower than the constitutional status of s. 35."],
+ ["Ipperwash Inquiry (2007)","When governments let a land or resource dispute fester, it can turn violent (Dudley George, 1995). The inquiry recommended treating these as land and treaty rights issues and consulting and accommodating First Nations. On Pigeon Lake, the government's silence is pushing things toward 'war'."],
+ ["Background, not in the film","Curve Lake is one of the seven Williams Treaties First Nations. In 2018, Canada and Ontario settled the Williams Treaties lawsuit and recognized these nations' treaty harvesting rights. That's a strong extra point for the 'treaty right' side."]
+];
+const LA_THESES=[
+ {k:"mid",t:"Middle ground: decide it together, nation to nation",best:true,
+  th:"The lakes are shared, so neither side should decide alone. Under s. 35 and Sparrow, Curve Lake's right to manoomin comes first, but governments can set fair limits after real consultation. A co-managed plan with rice zones and safety channels is the fair answer.",
+  e1:["Law: s. 35 protects Curve Lake's Aboriginal and treaty right to harvest and re-seed (the band letter), and s. 25 stops the Charter from cutting it down.","Sparrow lets government limit the right only for a valid objective like public safety, with priority and consultation. A 30 m buffer would be a justified limit, not a veto."],
+  e2:["Film: both sides already floated parts of a deal (the Woods' designated rice areas; James's 'nation to nation'), but government stayed silent for 8+ years and it became 'war', the Ipperwash pattern.","Osoyoos shows it works when settlers and First Nations cooperate 'on native terms' with 'mutual respect'. Taylor himself hopes for 'Cottagers With Indians'."],
+  ca:"Counter: James says compromise means giving up sovereignty. Response: Sparrow shows rights can be regulated without being destroyed, and a plan made nation to nation respects sovereignty rather than ignoring it."},
+ {k:"ind",t:"Curve Lake should decide",
+  th:"These are Anishinaabe waters. Curve Lake's constitutionally protected rights should outweigh cottagers' recreational preferences, so the First Nation should decide how the lakes are used.",
+  e1:["Law: s. 35 recognizes Aboriginal and treaty rights (and the 2018 Williams Treaties settlement recognized Curve Lake's harvesting rights). s. 25 shields them from Charter equality claims, and the Charter has no property rights.","Powley: rights are collective and site-specific, and Curve Lake as a nation has backed James in writing within its traditional territory."],
+  e2:["History: the Trent-Severn dams drowned rice beds that had fed the Anishinaabe for about 4,000 years. Replanting restores what colonization destroyed.","Shoal Lake 40 shows what happens when outsiders decide how First Nations' water is used."],
+  ca:"Counter: families can't swim and boats are endangered. Response: under Sparrow, safety can justify narrow limits, but it doesn't give cottagers control of the lake."},
+ {k:"cot",t:"Government should regulate it for everyone",
+  th:"The Trent-Severn is a public waterway shared by everyone, so government should decide, setting clear rules on seeding, as it can under Sparrow and Marshall II, rather than leaving one person to transform the lakes.",
+  e1:["Law: s. 35 rights aren't absolute. Sparrow and Marshall II say governments can regulate them for valid public objectives such as safety and navigation.","Right now there's a legal gap: clearing rice is illegal but seeding isn't regulated at all."],
+  e2:["Film: the rice grew from about 200 to 1,800+ acres, more than one person can harvest, and the Woods' grandchildren can't swim.","It's not about race: Bear Taylor, a Curve Lake business owner, opposes rice near his docks too."],
+  ca:"Counter: this repeats colonial control over Indigenous resources. Response: Sparrow requires consultation and priority for the Indigenous right, so regulation must be shaped with Curve Lake, not imposed on it."}
+];
+const LA_FIELDS=[["th","Thesis (answer: whose lakes? who decides? middle ground?)"],["e1a","Evidence 1 · point a"],["e1b","Evidence 1 · point b"],["e2a","Evidence 2 · point a"],["e2b","Evidence 2 · point b"],["ca","Counter-argument and your response"],["cn","Conclusion"]];
+const LA_CHECK=[["q3","Answers all three questions: whose lakes, who decides, middle ground"],["ppl","Names at least two people from the film (e.g., James Whetung, Larry Wood)"],["s35","Explains s. 35 (Aboriginal and treaty rights)"],["case","Uses at least one case: Sparrow, Marshall or Powley"],["hist","Gives the historical cause: Trent-Severn dams drowned the rice"],["other","Takes on the other side fairly"],["concl","Ends with a clear verdict"]];
+V["long-answer"]=()=>{
+  ST.la=ST.la||{};ST.lac=ST.lac||{};
+  app.innerHTML=`<section class="view"><div><span class="eyebrow">Long answer · Cottagers &amp; Indians (CBC Docs POV)</span><h1>Whose lakes are these?</h1></div>
+   <div class="sheet" style="display:grid;gap:10px"><h3>Your question</h3>
+     <p class="serif" style="font-size:17px;max-width:70ch">James Whetung of Curve Lake First Nation seeds Pigeon Lake and other shallow lakes with wild rice (manoomin, "the good seed"). Thousands of residents and cottagers say it ruins boating and swimming.</p>
+     <ol class="steps" style="font-size:16px;font-weight:650"><li>Whose lakes are these?</li><li>Who gets to decide how they are used and enjoyed?</li><li>Is there a middle ground?</li></ol>
+     <p class="note">Your worksheet's structure: <b>Thesis → Evidence 1 (2 points) → Evidence 2 (2 points)</b>. Strong answers mix film evidence (names, numbers, scenes) with law (s. 35 and a case).</p>
+     <div class="row"><a class="btn" href="${YT}" target="_blank" rel="noopener" style="text-decoration:none">Watch the film (44 min) ↗</a><a class="btn primary" href="#la-plan" id="la-jump" style="text-decoration:none">Jump to the planner</a></div></div>
+
+   <div class="sheet"><h2>The film, scene by scene</h2><p class="note" style="margin:4px 0 10px">Tap a time to open YouTube at that moment.</p>
+     <ul class="clean" style="display:grid;gap:8px">${LA_MOMENTS.map(([t,x])=>{const p=t.split(":").map(Number),s=p[0]*60+p[1];return `<li class="row" style="align-items:flex-start;flex-wrap:nowrap"><a class="tag" href="${YT}&t=${s}s" target="_blank" rel="noopener" style="min-width:44px;text-align:center">${t}</a><span style="font-size:14.5px">${esc(x)}</span></li>`}).join("")}</ul></div>
+
+   <div class="grid g3" style="align-items:start">${LA_SIDES.map(([h,pts])=>`<div class="sheet"><h3>${esc(h)}</h3><ul style="margin:8px 0 0;padding-left:18px;display:grid;gap:6px;font-size:14.5px">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul></div>`).join("")}</div>
+
+   <div class="sheet" style="display:grid;gap:12px"><div><h2>Connect it to the law</h2><p class="note">This is where the marks are. Film evidence shows <i>what</i> happened; the law shows <i>who is right</i>.</p></div>
+     <div class="grid g2">${LA_LAW.map(([h,x])=>`<div style="border-left:3px solid var(--robe);padding:4px 0 4px 12px"><b>${esc(h)}</b><p style="font-size:14.5px;margin:4px 0 0">${esc(x)}</p></div>`).join("")}</div></div>
+
+   <div style="display:grid;gap:12px"><div><h2>Pick a thesis</h2><p class="note">Three defensible positions, each with two pieces of evidence. The first one is the easiest to argue well because it answers all three questions and uses the most law. Any of them can earn full marks if you back it up.</p></div>
+     ${LA_THESES.map(T=>`<details class="sheet" ${T.best?"open":""}><summary style="cursor:pointer"><b style="font-size:16.5px">${esc(T.t)}</b> ${T.best?`<span class="tag gold">Recommended</span>`:""}</summary>
+       <div style="display:grid;gap:10px;margin-top:10px;font-size:14.5px"><p class="serif" style="font-size:16px"><b>Thesis:</b> ${esc(T.th)}</p>
+       <div><b>Evidence 1</b><ul style="margin:4px 0 0;padding-left:18px">${T.e1.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+       <div><b>Evidence 2</b><ul style="margin:4px 0 0;padding-left:18px">${T.e2.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+       <p class="callout">${esc(T.ca)}</p>
+       <div class="row"><button class="btn" data-use="${T.k}">Load this outline into my planner</button></div></div></details>`).join("")}</div>
+
+   <div class="sheet" id="la-plan" style="display:grid;gap:12px"><div class="row" style="justify-content:space-between"><div><h2>Your planner</h2><p class="note">Saves automatically on this device. Put it in your own words; that's what sticks on test day.</p></div><span class="note mono" id="la-wc"></span></div>
+     ${LA_FIELDS.map(([k,l])=>`<label style="display:grid;gap:4px"><span style="font-weight:650;font-size:14px">${l}</span><textarea data-la="${k}" rows="${k==="th"||k==="cn"?3:2}">${esc(ST.la[k]||"")}</textarea></label>`).join("")}
+     <div class="row"><button class="btn primary" id="la-copy">Copy outline</button><button class="btn ghost" id="la-clear">Clear</button></div>
+     <div><h3 style="font-size:15px">Self-check before the test</h3><ul class="clean plan" style="margin-top:6px">${LA_CHECK.map(([k,l])=>`<li class="${ST.lac[k]?"done":""}"><input type="checkbox" id="lac-${k}" data-lac="${k}" ${ST.lac[k]?"checked":""}><label for="lac-${k}">${esc(l)}</label></li>`).join("")}</ul></div>
+   </div>
+   <p class="flag">Practice once from memory: close this page, set a timer for 20 minutes and write the full answer on paper, then compare it with your planner.</p></section>`;
+  const wc=()=>{const n=LA_FIELDS.map(([k])=>ST.la[k]||"").join(" ").trim().split(/\s+/).filter(Boolean).length;$("#la-wc").textContent=n+" words"};wc();
+  let t=null;const fit=ta=>{ta.style.height="auto";ta.style.height=ta.scrollHeight+2+"px"};$$("textarea[data-la]").forEach(ta=>{fit(ta);ta.oninput=()=>{fit(ta);ST.la[ta.dataset.la]=ta.value;wc();clearTimeout(t);t=setTimeout(save,400)}});
+  $$("[data-use]").forEach(b=>b.onclick=()=>{const T=LA_THESES.find(x=>x.k===b.dataset.use);const has=LA_FIELDS.some(([k])=>(ST.la[k]||"").trim());if(has&&!confirm("Replace what's in your planner?"))return;
+    ST.la={th:T.th,e1a:T.e1[0],e1b:T.e1[1],e2a:T.e2[0],e2b:T.e2[1],ca:T.ca,cn:""};save();V["long-answer"]();$("#la-plan").scrollIntoView({behavior:"smooth"});toast("Outline loaded. Now rewrite it in your own words.")});
+  $("#la-jump").onclick=e=>{e.preventDefault();$("#la-plan").scrollIntoView({behavior:"smooth"})};
+  $("#la-copy").onclick=async()=>{const txt=LA_FIELDS.map(([k,l])=>l.toUpperCase()+"\n"+(ST.la[k]||"")).join("\n\n");try{await navigator.clipboard.writeText(txt);toast("Copied")}catch(e){toast("Couldn't copy on this browser")}};
+  $("#la-clear").onclick=()=>{if(confirm("Clear your planner?")){ST.la={};save();V["long-answer"]()}};
+  $$("[data-lac]").forEach(cb=>cb.onchange=()=>{ST.lac[cb.dataset.lac]=cb.checked;if(cb.checked)addXP(5);save();cb.closest("li").classList.toggle("done",cb.checked)});
 };
 
 /* ============================== ROUTER ============================== */
