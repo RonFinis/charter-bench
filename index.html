@@ -88,7 +88,15 @@ a.tag{text-decoration:none;cursor:pointer;white-space:normal}
 .ol-list{margin:6px 0 0;padding-left:18px;display:grid;gap:4px;font-size:14.5px}
 .ol-list .ol-sub{list-style:none;margin-left:-6px}
 .ol-list .ol-sub>.ol-list{margin-top:0;font-size:14px}
+.ol-sec{display:grid;grid-template-columns:8.5em 1fr;gap:0 12px;align-items:start}
+.ol-lbl{font-weight:650;font-size:14.5px;padding-top:5px;border-right:2px solid var(--seal);padding-right:8px;min-width:0}
+.ol-lines{margin:0;padding-left:2.2em;font-size:15px}
+.ol-lines li{border-bottom:1px solid var(--rule);padding:5px 0}
+.ol-lines li::marker{color:var(--muted);font-size:12px}
+@media (max-width:560px){.ol-sec{grid-template-columns:1fr}.ol-lbl{border-right:0;border-bottom:2px solid var(--seal);padding-bottom:3px}}
 @media print{
+  body.print-outline .ol-lines{font-size:12px}
+  body.print-outline .ol-lbl{border-color:#000}
   body.print-outline>*:not(main){display:none!important}
   body.print-outline #app>section>*:not(#la-outline){display:none!important}
   body.print-outline #la-outline{border:0;padding:0;background:#fff;color:#000}
@@ -1459,6 +1467,13 @@ const LA_THESES=[
   e2:["Film: the rice grew from about 200 to 1,800+ acres, more than one person can harvest, and the Woods' grandchildren can't swim.","It's not about race: Bear Taylor, a Curve Lake business owner, opposes rice near his docks too."],
   ca:"Counter: this repeats colonial control over Indigenous resources. Response: Sparrow requires consultation and priority for the Indigenous right, so regulation must be shaped with Curve Lake, not imposed on it."}
 ];
+const LA_SHEET=[
+ ["Intro","~70 words",["Hook: Pigeon Lake, near Curve Lake First Nation","James Whetung seeds manoomin; Woods lead opposition","Rice ~200 → 1,800 acres in ~10 yrs","THESIS: legally Curve Lake's right (s. 35), BUT","gov't + Curve Lake should regulate: allotted rice zones","Docks & swim areas stay clear = middle ground"]],
+ ["Ev 1: Sparrow","~130 words",["R v Sparrow (1990): s. 35 rights NOT absolute","1) Valid objective: safety, not vague \"public interest\"","Rice jams engines; Woods' sailboat stuck 5 yrs","2) Honour of Crown: priority, min. impair, consult","Only ~30 m buffer at docks (Woods' own idea)","→ allotted zones pass the Sparrow test"]],
+ ["Ev 2: Legal realism","~130 words",["Law = what judges/officials actually DO","s. 35 has no limits, but SCC made Sparrow","Real lives: kids can't swim; Larry \"I'll get shot\"","James: plant till \"too thick to paddle\"","No seeding rule; clearing illegal; buffer permit refused","→ officials' silence fuels conflict; law must act"]],
+ ["Counter","~70 words",["James: \"nation to nation\"; dams flooded rice 100+ yrs ago","Response: zones set WITH Curve Lake; rice keeps priority","Osoyoos (Chief Clarence Louie): share \"on native terms\""]],
+ ["Conclusion","~50 words",["Whose? Curve Lake's right comes first","Who decides? Gov't + Curve Lake, not one side","Middle ground: zones. \"Cottagers WITH Indians\""]]
+];
 const LA_OUTLINE=[
  ["1. Intro","~70 words",["Hook: Pigeon Lake beside Curve Lake First Nation. James Whetung seeds manoomin (\"the good seed\"); Larry & Marilyn Wood lead the cottagers against it.","Context: rice grew from ~200 to 1,500–1,800 acres in about 10 years.",["THESIS: Legally, the right is Curve Lake's (s. 35). But after consulting Curve Lake, the government should REGULATE it with ALLOTTED RICE ZONES that keep docks and swimming areas clear. That is the middle ground."]]],
  ["2. Evidence 1: R v Sparrow (1990)","~130 words",["s. 35 rights are recognized but NOT absolute. Government can limit or regulate them, not rewrite them.","Step 1: a compelling and substantial objective. Conservation and PREVENTING HARM TO THE PUBLIC count; a vague \"public interest\" doesn't.",["Here it's safety: rice jams engines and pushes boats close to swimmers, and the Woods' sailboat has been stuck for 5 years."],"Step 2, honour of the Crown:",["PRIORITY: the rice keeps most of the lake.","MINIMAL IMPAIRMENT: only a ~30 m buffer at docks (the Woods' own idea).","CONSULTATION with Curve Lake."],"Link: allotted zones pass the Sparrow test."]],
@@ -1494,9 +1509,11 @@ V["long-answer"]=()=>{
 
    <div class="sheet" id="la-outline" style="display:grid;gap:12px">
      <div class="row" style="justify-content:space-between;align-items:flex-start"><div><span class="eyebrow">For your one-sided sheet · ≈450 words · 1–2 pages double-spaced</span><h2>Whose lakes? Your outline</h2></div><button class="btn" id="la-print" type="button">Print outline</button></div>
-     <p class="note no-print">Copy keywords onto your sheet, not full sentences, so on test day you're writing the answer, not copying it.</p>
-     <div class="grid g2" style="align-items:start">${LA_OUTLINE.map(([h,wds,items])=>`<div class="ol-block"><div class="row" style="justify-content:space-between;align-items:baseline"><h3 style="font-size:16px">${esc(h)}</h3><span class="tag plain">${wds}</span></div>${olList(items)}</div>`).join("")}
-       <div class="ol-block"><h3 style="font-size:16px">Tips for test day</h3>${olList(LA_TIPS)}</div></div>
+     <p class="note no-print"><b>One line here = one line on your sheet</b> (${LA_SHEET.reduce((n,s)=>n+s[2].length,0)} lines). Start on the top line, write the section name in the margin like "Intro:", and skip one line between sections. That's about 28 lines, so it fits on one side.</p>
+     <div style="display:grid;gap:10px">${(()=>{let n=0;return LA_SHEET.map(([h,wds,lines])=>`<div class="ol-sec"><div class="ol-lbl">${esc(h)}<span class="note" style="display:block;font-weight:400">${wds}</span></div><ol class="ol-lines" start="${n+1}">${lines.map(l=>(n++,`<li>${esc(l)}</li>`)).join("")}</ol></div>`).join("")})()}</div>
+     <details class="no-print"><summary style="cursor:pointer;font-weight:650">Full outline with explanations (study this, don't copy it)</summary>
+       <div class="grid g2" style="align-items:start;margin-top:10px">${LA_OUTLINE.map(([h,wds,items])=>`<div class="ol-block"><div class="row" style="justify-content:space-between;align-items:baseline"><h3 style="font-size:16px">${esc(h)}</h3><span class="tag plain">${wds}</span></div>${olList(items)}</div>`).join("")}
+       <div class="ol-block"><h3 style="font-size:16px">Tips for test day</h3>${olList(LA_TIPS)}</div></div></details>
    </div>
 
    <div class="sheet"><h2>The film, scene by scene</h2><p class="note" style="margin:4px 0 10px">Tap a time to open YouTube at that moment.</p>
